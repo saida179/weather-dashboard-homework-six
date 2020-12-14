@@ -1,11 +1,15 @@
-// API key
-let APIKey = "b04868ffacca8e05f416295d5d74ee96";
-let queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + APIKey;
-let city =["Tucson", "Phoenix", "seattle","olympia"]
-function theDay() {
-    $("#currentDay").html(moment().format("MMMM Do YYYY, h:mm a"));
-    console.log(currentDay)
-}
+$(document).ready(function(){
+    const apiKey ="b04868ffacca8e05f416295d5d74ee96";
+    const loadLocal = window.localStorage.getItem("city")
+    
+    let queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + APIKey;
+
+    function timeUpdate (){
+        $("#currentDay").text(moment().format("MMMM Do YYYY, H:mm"));
+
+    }
+
+
 //I used one of the activity for help
 $.ajax({
     url: queryURL,
@@ -17,7 +21,7 @@ $.ajax({
     console.log(response.main.temp)
     let temp =(response.name.temp - 273.15) * 1.80 + 32;
     console.log(temp)
-    $(".city").html("<h1>" + response.name + " Weather Details</h1>");
+    $(".city").html("<h1>" + response.name + "</h1>");
     $(".wind").text("Wind Speed: " + response.wind.speed);
     $(".humidity").text("Humidity: " + response.main.humidity);
     $(".temp").text("Temperature (K) " + response.main.temp);
@@ -26,7 +30,7 @@ $.ajax({
 });
 
 function renderButtons(){
-    $("#city-search").empty();
+    $("#search-button").empty();
     for (let i=0; i <city.length; i++ ){
     
     }
@@ -42,7 +46,7 @@ $("#add-city").on("click",function(event) {
 });
 
 
-$(document).on("click", ".movie-btn", displayWeather);
+$(document).on("click", "search-button", displayWeather);
 renderButtons();
 
 $.ajax({
@@ -50,5 +54,7 @@ $.ajax({
     method: "GET"
 }).then(function (response) {
     let cityDiv = $("<div class='city'>")
-    $("#city-search").prepend(cityDiv);
+    $("#search-button").prepend(cityDiv);
     });
+
+});

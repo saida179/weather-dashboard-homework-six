@@ -1,124 +1,79 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Weather Dashboard homework!</title>
-  </head>
-  <body>
-      <div class="jumbotron">
-        <div class="container">
-          <h1 class="display-4">Weather Dashboard</h1>
-        </div>
-      </div>
-      
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-      <div style="background-image: url('weather1.jpg');">
-        <!--search city-->
-        <div class="container">
-          <!--<div class="d-flex flex-row bd-highlight mb-3">-->
-          <div class="row">
-            <div class="col-md-6">
-              <div class="card">
-                <div class="card-body">
-                  <h1>Search for a City</h1>
-                              <!--city history-->
-                      <div id="city-search"></div>
-                        <form id="city-form">
-                        <label for="city-input"></label>
-                        <input type="text" id="city-input">
-                        <input id="add-city" type="submit" value="search">
-                        </form>
-                        <div class="btn-group-vertical">
-                          <button type="button" class="btn btn-secondary btn-sm" id="city1">
-                            <button type="button" class="btn btn-secondary btn-sm" id="city2">
-                              <button type="button" class="btn btn-secondary btn-sm" id="city3">
-                                <button type="button" class="btn btn-secondary btn-sm" id="city4">
-                                </button>
-                              </button>
-                            </button>
-                          </button>
-                        </div>
-                </div>
+
+  <title>Weather Dashboard homework!</title>
+</head>
+
+<body>
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-4">Weather Dashboard</h1>
+    </div>
+  </div>
+
+
+  <div style="background-image: url('assets/weather1.jpg');">
+    <!--search city-->
+    <div class="container">
+      <!--<div class="d-flex flex-row bd-highlight mb-3">-->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h1>Search for a City</h1>
+              <!--city history-->
+              <div id="city-search"></div>
+              <form id="city-form">
+                <label for="city-input"></label>
+                <input id="form-control" type="text" value="Search">
+                <button class="btn btn-primary" id="search-button"> <i class="fa fa-search"></i> </button>
+              </form>
             </div>
           </div>
-        
-    <!--column2-->
-          <div class= "col-md-6">
-            <div class= "card">
-              <div class= "card-body">
-                <h2>city</h2>
-                <p1 id="currentDay" class="lead"></p>
+        </div>
+
+        <!--column2-->
+        <div class="col-lg-12 d-flex justify-content-center">
+          <div class="card">
+            <div class="card-body" id= "display">
+              <h2>city</h2>
+              <p1 id="currentDay" class="lead">
+                </p>
                 <div class="city"></div>
                 <div class="temp"></div>
                 <div class="wind"></div>
                 <div class="humidity"></div>
                 <div class="tempF"></div>
-
-              </div>
             </div>
           </div>
-        
-    <!--row2-->
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <p2 id="currentDay"></p2>
-
         </div>
+        <!--background image ends here-->
       </div>
     </div>
-    <!--colum2-->
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <p3 id="currentDay"></p3>
-          
-        </div>
-      </div>
-    </div>
-    <!--column3-->
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <p4 id="currentDay"></p4>
-          
-        </div>
-      </div>
-    </div>
-    <!--column4-->
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <p5 id="currentDay"></p5>
-          
-        </div>
-      </div>
-    </div>
-    <!--column5-->
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <p6 id="currentDay"></p6>
-          
-        </div>
-      </div>
-    </div>
-  <!--background image ends here-->
-        </div>
-      </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js"></script>
     <script src="style.css"></script>
-  </body>
+</body>
+
 </html>
