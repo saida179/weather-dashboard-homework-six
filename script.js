@@ -2,7 +2,8 @@ $(document).ready(function () {
 
     //function displaySearchCity(searchValue) {
         let APIKey = "a6ed307e0d393685de5ab5ab77958fdb";
-        let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + APIKey + "&units=imperial";
+        let queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
+        "q=Bujumbura,Burundi&appid=" + APIKey;
         
 
         $.ajax({
